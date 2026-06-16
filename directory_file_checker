@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo -e "What directory would you like to check for?\n"
+
+read check_directory 
+
+echo -e "" 
+
+echo -e "does not exist would you like to create it? (Type \"yes\" or \"no\") \n"
+
+
+
