@@ -8,9 +8,9 @@ read check_directory
 
 echo -e ""
 
-directory_checked=$(ls | grep $check_directory)
+directory_checked=$(find ./ -name $check_directory -type d | grep $check_directory)
 
-if [[ $directory_checked == $check_directory ]]; then
+if [[ $directory_checked == "./$check_directory" ]]; then
         echo -e "The directory $check_directory already exist"
 elif [[ $directory_checked != $check_directory ]]; then
         echo -e "does not exist would you like to create it? (Type \"yes\" or \"no\") \n"
@@ -35,9 +35,9 @@ read check_file
 
 echo ""
 
-file_checked=$(ls $check_directory | grep $check_file)
+file_checked=$(find ./$check_directory -name $check_file -type f | grep $check_file)
 
-if [[ $file_checked == $check_file ]]; then
+if [[ $file_checked == "./$check_directory/$check_file" ]]; then
         echo -e "The file $check_file already exist"
 elif [[ $file_checked != $check_file ]]; then
         echo -e "does not exist would you like to create it? (Type \"yes\" or \"no\") \n"
